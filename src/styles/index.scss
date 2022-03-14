@@ -1,0 +1,87 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  color: vars.$text-color;
+  font-family: 'Roboto';
+  font-size: 1rem;
+  cursor: url("../assets/img/cursor.png"), pointer;
+}
+
+a:hover {
+  cursor: url("../assets/img/cursor.png"), pointer;
+}
+
+body::-webkit-scrollbar {
+
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+
+  background-color: #0b336c;   
+}
+
+body::-webkit-scrollbar-thumb {
+
+  background-color: #0a1544;   
+}
+
+p {
+  font-size: 1rem;
+}
+
+#root {
+  background: rgb(0,0,0);
+  background: linear-gradient(38deg, rgba(14, 26, 77,1) 0%, rgba(131,58,180,1) 100%), no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+.main {
+  width:100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media (max-width: 375px) {
+  p {
+    font-size: .8rem;
+  }
+  .content__text--line {
+    font-size: 1em !important;
+  }
+  .content__btn {
+    margin: 10px 0 !important;
+  }
+}
+
+
+/* 
+  // or you can import your own font
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+*/
