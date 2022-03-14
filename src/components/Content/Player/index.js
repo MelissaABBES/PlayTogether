@@ -1,26 +1,16 @@
 import { Link } from 'react-router-dom';
-import computer from 'src/assets/img/computer.png';
-import tetris from 'src/assets/img/tetris.png';
-import flag from 'src/assets/img/france.png';
 import './style.scss';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router';
 import FavoritePlayer from './FavoritePlayer';
 import PlayerByGame from './PlayerByGame';
 import Loader from '../Loader';
 
 const Player = () => {
-  console.log('jysuis');
   const usersByGame = useSelector((state) => state.usersByGame);
   const favoritesPlayers = useSelector((state) => state.user.favoritesPlayers);
   const InfoPlayers = useSelector((state) => state.user.favoritesPlayers);
   const findPlayer = favoritesPlayers.map((player) => player.id);
   const findPlayerByGame = usersByGame.map((player) => player.id);
-
-  console.log(usersByGame);
-  console.log(favoritesPlayers);
-  console.log(findPlayer);
-  console.log(findPlayerByGame);
 
   let findPlayer1 = [];
   let duplicates = [];

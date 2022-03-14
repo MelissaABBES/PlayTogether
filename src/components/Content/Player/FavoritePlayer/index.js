@@ -1,24 +1,16 @@
 import { Link } from 'react-router-dom';
-import computer from 'src/assets/img/computer.png';
-import tetris from 'src/assets/img/tetris.png';
 import flag from 'src/assets/img/france.png';
 import { useSelector } from 'react-redux';
-import Loader from '../../Loader';
 
 const FavoritePlayer = ({
   InfoPlayersFav,
-  players,
   profile_picture,
   pseudo,
   age,
   player_id,
-  InfoPlayers,
 }) => {
-  console.log('jysuis');
   const favoritesPlayers = useSelector((state) => state.user.favoritesPlayers);
   const foundPlayer = favoritesPlayers.find((gPlayer) => gPlayer.id === InfoPlayersFav);
-  // console.log(players.id);
-  console.log(foundPlayer);
   if (foundPlayer !== undefined) {
     return (
       <>
@@ -36,13 +28,6 @@ const FavoritePlayer = ({
       </>
     );
   }
-  
-  // InfoPlayers.forEach(element => console.log(element.pseudo));
-  // InfoPlayers.map(element => {
-    for (const [key, value] of Object.entries(InfoPlayers)) {
-      console.log(`${key}: ${value}`);
-    }
-  // });
 
   return (
     <>

@@ -16,7 +16,6 @@ const ajaxMiddleware = (store) => (next) => (action) => {
         // const userAction = loginSuccess(user);
         // store.dispatch(userAction);
       }
-      console.log(foundStringUser);
       break;
     case LOGIN:
       const { email, password } = store.getState().user;
@@ -28,7 +27,6 @@ const ajaxMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((res) => {
-          console.log(res.data);
           const actionLoginSuccess = loginSuccess(res.data);
           store.dispatch(actionLoginSuccess);
         })
@@ -50,7 +48,6 @@ const ajaxMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((res) => {
-          console.log(res.data.connectedUser);
           const userInfoAction = receivedUserInfo(res.data.connectedUser);
           store.dispatch(userInfoAction);
         })
@@ -67,20 +64,12 @@ const ajaxMiddleware = (store) => (next) => (action) => {
       break;
     case FETCH_GAMES_INFOS:
       next(action);
-      // const { games } = store.getState().games;
       axios({
         method: 'get',
         url: 'https://playtogether-back.herokuapp.com/games',
-        // headers: {
-        //   Authorization: `Bearer ${accessToken}`,
-        // },
       })
         .then((res) => {
-          // console.log(store.getState());
-
-          // store.dispatch(receivedGamesInfos(res.data));
           const actionReceivedGamesInfos = receivedGamesInfos(res.data);
-          console.log('middleware', actionReceivedGamesInfos);
           store.dispatch(actionReceivedGamesInfos);
 
           // const actionReceivedGamesInfos = receivedGamesInfos(res.data);

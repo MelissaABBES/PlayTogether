@@ -1,15 +1,12 @@
 import './style.scss';
 import { useMediaQuery } from 'react-responsive';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import GameCard from './GameCard';
 
-
 // == Composant
 const GamesPage = () => {
-
   const isMobile = useMediaQuery({
     query: '(max-width: 1023px)',
   });
@@ -20,7 +17,6 @@ const GamesPage = () => {
   });
 
   // const games = useSelector((state) => state.games);
-  
 
   // const user = useSelector((state) => state.user);
   // console.log('user', user);
@@ -32,31 +28,30 @@ const GamesPage = () => {
 
   // console.log(typeof filterNote, filterNote);
 
-  const games = useSelector((state) => {
+  const games = useSelector((state) =>
     // je filtre la liste complete de jeux
-    return state.games.filter((game) => {
+    state.games.filter((game) => {
       // je créer une variable d'affichage est qui True par défaut
-      let isGameDisplayed = true
+      let isGameDisplayed = true;
       // si j'ai saisi un filtre dans ma barre de recherche et que ça ne correspond pas au titre du jeu
-      if(filterText.length && !game.name.toLowerCase().includes(filterText)){
+      if (filterText.length && !game.name.toLowerCase().includes(filterText)) {
         // je retourne ma variable a false pour ne pas retourner le jeu dans la liste des jeux
-        isGameDisplayed = false
+        isGameDisplayed = false;
       }
-      if(filterGender.length && !game.tags.includes(filterGender)){
+      if (filterGender.length && !game.tags.includes(filterGender)) {
         // je retourne ma variable a false pour ne pas retourner le jeu dans la liste des jeux
-        isGameDisplayed = false
+        isGameDisplayed = false;
       }
-      if(filterPlatform.length && !game.platforms.includes(filterPlatform)){
+      if (filterPlatform.length && !game.platforms.includes(filterPlatform)) {
         // je retourne ma variable a false pour ne pas retourner le jeu dans la liste des jeux
-        isGameDisplayed = false
+        isGameDisplayed = false;
       }
-      if(Number(filterNote) !== game.note && filterNote){
+      if (Number(filterNote) !== game.note && filterNote) {
         // je retourne ma variable a false pour ne pas retourner le jeu dans la liste des jeux
-        isGameDisplayed = false
+        isGameDisplayed = false;
       }
       return isGameDisplayed;
-    })
-  });
+    }));
   // console.log('jeux reçus ', 'nombres de jeu', games.length, games);
 
   // console.log(typeof filterNote);
@@ -74,7 +69,7 @@ const GamesPage = () => {
 
         <div className="games-page__inputs__search">
 
-          <input className="games-page__inputs__search--input" value={filterText} onChange={(e) => setFilterText(e.target.value)} placeholder="Rechercher un jeu" type="search"/>
+          <input className="games-page__inputs__search--input" value={filterText} onChange={(e) => setFilterText(e.target.value)} placeholder="Rechercher un jeu" type="search" />
 
         </div>
 
@@ -82,73 +77,75 @@ const GamesPage = () => {
 
           <div className="games-page__inputs__filters__select">
 
-            <label for="gender">Genre</label>
+            <label htmlFor="gender" >Genre</label>
 
             <select className="games-page__inputs__filters__select--gender" value={filterGender} onChange={(e) => setFilterGender(e.target.value)} name="filters" id="gender">
-                <option value=""></option>
-                <option value="Aventure">Aventure</option>
-                <option value="Reflexion">Réflexion</option>
-                <option value="Open-world">Open-world</option>
-                <option value="RPG">RPG</option>
-                <option value="FPS">FPS</option>
-                <option value="Action">Action</option>
-                <option value="Course">Course</option>
-                <option value="MMORPG">MMORPG</option>
-                <option value="Sport">Sport</option>
-                <option value="Coop">Coop</option>
-                <option value="Zombies">Zombies</option>
-                <option value="BR">Battle royale</option>
-                <option value="Sport">Sport</option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Horreur">Horreur</option>
-                <option value="Survival">Survival</option>
-                <option value="MMO">MMO</option>
-                <option value="Sand-box">Sand-box</option>
-                <option value="Stratégie">Stratégie</option>
-                <option value="Plateforme">Plateforme</option>
-                <option value="Combat">Combat</option>
-                <option value="Simulation">Simulation</option>
-                <option value="Space">Space</option>
-                <option value="Dark Fantasy">Dark Fantasy</option>
+              <option value="" aria-label="gender" />
+              <option value="Aventure">Aventure</option>
+              <option value="Reflexion">Réflexion</option>
+              <option value="Open-world">Open-world</option>
+              <option value="RPG">RPG</option>
+              <option value="FPS">FPS</option>
+              <option value="Action">Action</option>
+              <option value="Course">Course</option>
+              <option value="MMORPG">MMORPG</option>
+              <option value="Sport">Sport</option>
+              <option value="Coop">Coop</option>
+              <option value="Zombies">Zombies</option>
+              <option value="BR">Battle royale</option>
+              <option value="Sport">Sport</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Horreur">Horreur</option>
+              <option value="Survival">Survival</option>
+              <option value="MMO">MMO</option>
+              <option value="Sand-box">Sand-box</option>
+              <option value="Stratégie">Stratégie</option>
+              <option value="Plateforme">Plateforme</option>
+              <option value="Combat">Combat</option>
+              <option value="Simulation">Simulation</option>
+              <option value="Space">Space</option>
+              <option value="Dark Fantasy">Dark Fantasy</option>
             </select>
-            
+
           </div>
 
           <div className="games-page__inputs__filters__select">
 
-            <label for="platform">Plateforme</label>
+            <label htmlFor="platform">Plateforme</label>
 
             <select className="games-page__inputs__filters__select--platform" value={filterPlatform} onChange={(e) => setFilterPlatform(e.target.value)} name="filters" id="platform">
-                <option value=""></option>
-                <option value="Playstation">Playstation</option>
-                <option value="Xbox">Xbox</option>
-                <option value="PC">PC</option>
-                <option value="Switch">Switch</option>
+              <option value="" aria-label="platform" />
+              <option value="Playstation">Playstation</option>
+              <option value="Xbox">Xbox</option>
+              <option value="PC">PC</option>
+              <option value="Switch">Switch</option>
             </select>
-            
+
           </div>
 
           <div className="games-page__inputs__filters__select">
 
-            <label for="note">Note</label>
+            <label htmlFor="note">Note:</label>
 
             <select className="games-page__inputs__filters__select--note" value={parseInt(filterNote, 10)} onChange={(e) => setFilterNote(e.target.value)} name="filters" id="note">
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+              <option value="" aria-label="note" />
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
-            
+
           </div>
 
           {/* <div className="games-page__inputs__filters__select">
 
             <label for="platform">Joueurs</label>
 
-            <select className="games-page__inputs__filters__select--players" value={filterGender} onChange={(e) => setFilterGender(e.target.value)} name="filters" id="players">
-                <option value=""></option>
+            <select className="games-page__inputs__filters__select--players"
+            value={filterGender}
+            onChange={(e) => setFilterGender(e.target.value)} name="filters" id="players">
+                <option value="" aria-label="platform" />
                 <option value="psn">Psn</option>
                 <option value="xbox">Xbox</option>
                 <option value="nintendo">Nintendo</option>

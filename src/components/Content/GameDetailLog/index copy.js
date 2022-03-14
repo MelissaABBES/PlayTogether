@@ -1,14 +1,11 @@
 import './style.scss';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  addFavoritesGames,
-  saveCurrentGameId,
-  fetchUsersByGame,
-  fetchUserGames,
-  displayAddGameModale,
-  userInputChange,
+  addFavoritesGames, saveCurrentGameId, gameAlreadyInFavoritesSucces, fetchUsersByGame, fetchUsersByGameSucces, fetchUserGames, displayAddGameModale, userInputChange, updateGameInfos
 } from 'src/actions';
 import { useEffect, useState } from 'react';
 import level from 'src/assets/img/level.png';
@@ -37,8 +34,8 @@ const GameDetailLog = () => {
   const favoritesGames = useSelector((state) => state.user.favoritesGames);
   const currentGameId = useSelector((state) => state.currentGameId);
   let gameAlreadyInFavorites = useSelector((state) => state.gameAlreadyInFavorites);
-  // const usersByGame = useSelector((state) => state.usersByGame);
-  // const favoritesPlayers = useSelector((state) => state.user.favoritesPlayers);
+  const usersByGame = useSelector((state) => state.usersByGame);
+  const favoritesPlayers = useSelector((state) => state.user.favoritesPlayers);
 
   // const filteredUsersByGame = usersByGame.filter((user) => user.game_id == currentGameId);
 
@@ -71,6 +68,7 @@ const GameDetailLog = () => {
   const games = useSelector((state) => state.games);
 
   const selectedGame = favoritesGames.find((game) => game.game_id == currentGameId);
+  console.log('favorites games', favoritesGames);
 
   if (favoritesGames.includes(selectedGame)) {
     gameAlreadyInFavorites = true;
@@ -86,42 +84,40 @@ const GameDetailLog = () => {
   }, []);
 
   const findGame = games.find((game) => id == game.id);
-  // const findPlayer = favoritesPlayers.find((player) => id == player.id);
-  // const findPlayerByGame = usersByGame.find((player) => id == player.id);
+  const findPlayer = favoritesPlayers.find((player) => id == player.id);
+  const findPlayerByGame = usersByGame.find((player) => id == player.id);
+  
+
 
   return (
     <div className="game-detail">
-      <div className="game-detail__header">
-        <h1 className="game-detail__infos__container__head--title">{findGame.name}</h1>
-        {gameAlreadyInFavorites && <img className="game-detail__infos__container__head--check" src={check} alt="check" />}
-        {!gameAlreadyInFavorites && (
-        <button
-          type="button"
-          className="game-detail__infos__container__head--button"
-          onClick={() => {
-            const action = addFavoritesGames();
-            dispatch(action);
-            dispatch(fetchUserGames());
-            dispatch(displayAddGameModale());
-            setInfosVisible(!infosVisible);
-          }}
-        >Ajouter
-        </button>
-        )}
-        {gameAlreadyInFavorites && <RemoveGame />}
-      </div>
+
       <div className="game-detail__infos">
 
         <div className="game-detail__infos__container">
 
+          <div className="game-detail__infos__container__head">
+
+            <h1 className="game-detail__infos__container__head--title">{findGame.name}</h1>
+            {gameAlreadyInFavorites && <img className="game-detail__infos__container__head--check" src={check} alt="check" />}
+            {!gameAlreadyInFavorites && (
+            <button
+              type="button"
+              className="game-detail__infos__container__head--button"
+              onClick={() => { const action = addFavoritesGames(); dispatch(action); dispatch(fetchUserGames()); dispatch(displayAddGameModale()); setInfosVisible(!infosVisible);
+              }}
+            >Ajouter
+            </button>
+            )}
+            {gameAlreadyInFavorites && <RemoveGame />}
+
+          </div>
+
           <div className="game-detail__infos__container__tags">
-            {
-              findGame.tags.forEach((tag) => {
-                <div className="game-tag">
-                  <p className="game-tag--tag">{tag}</p>
-                </div>;
-              })
-            }
+
+            <GameTag />
+            <GameTag />
+            <GameTag />
 
           </div>
 
@@ -137,13 +133,13 @@ const GameDetailLog = () => {
 
       <div className="game-detail__content">
 
-        <form className="game-detail__content__filters">
+      <form className="game-detail__content__filters">
 
-          <div className="game-detail__content__filters__gameImg">
+<div className="game-detail__content__filters__gameImg">
 
-            <img className="game-detail__content__filters__gameImg--img" src={findGame.cover} alt={findGame.name} />
+  <img className="game-detail__content__filters__gameImg--img" src={findGame.cover} alt="Image du jeu" />
 
-          </div>
+</div>
 
           <select className="game-detail__content__filters--platform" name="platforms" id="platform-select" value={filterPlatform} onChange={(e) => setFilterPlatform(e.target.value)}>
 
@@ -153,18 +149,18 @@ const GameDetailLog = () => {
             <option value="Playstation">Playstation</option>
             <option value="Switch">Switch</option>
 
-          </select>
+</select>
 
           <select className="game-detail__content__filters--levels" name="levels" id="levels-select" value={filterLevel} onChange={(e) => setFilterLevel(e.target.value)}>
 
-            <option value="">Niveau</option>
-            <option value="JarJar Binks">JarJar Binks</option>
-            <option value="Padawan">Padawan</option>
-            <option value="Chevalier jedi">Chevalier jedi</option>
-            <option value="Maître jedi">Maître jedi</option>
-            <option value="Yoda">Yoda</option>
+  <option value="">Niveau</option>
+  <option value="JarJar Binks">JarJar Binks</option>
+  <option value="Padawan">Padawan</option>
+  <option value="Chevalier jedi">Chevalier jedi</option>
+  <option value="Maître jedi">Maître jedi</option>
+  <option value="Yoda">Yoda</option>
 
-          </select>
+</select>
 
           <select className="game-detail__content__filters--style" name="style" id="style-select" value={filterGameplay} onChange={(e) => setFilterGameplay(e.target.value)}>
 
@@ -173,9 +169,9 @@ const GameDetailLog = () => {
             <option value="Challenger">Challenger</option>
             <option value="Try Hard">Try hard</option>
 
-          </select>
+</select>
 
-        </form>
+</form>
 
         <p className="game-detail__content--title">Liste des joueurs pour titre du jeu</p>
 
@@ -187,11 +183,9 @@ const GameDetailLog = () => {
 
             {isTabletOrDesktop && <> <Player /></>}
 
-            {/* {isMobile && <> {filteredUsersByGame.map((user) =>
-            (<Link to={`/player/${user.id}`}><Player key={user.id} {...user} /></Link>))} </>}
+            {/* {isMobile && <> {filteredUsersByGame.map((user) => (<Link to={`/player/${user.id}`}><Player key={user.id} {...user} /></Link>))} </>}
 
-            {isTabletOrDesktop && <> {filteredUsersByGame.map((user) =>
-            (<Link to={`/player/${user.id}`}><Player key={user.id} {...user} /></Link>))} </>} */}
+            {isTabletOrDesktop && <> {filteredUsersByGame.map((user) => (<Link to={`/player/${user.id}`}><Player key={user.id} {...user} /></Link>))} </>} */}
 
           </div>
 

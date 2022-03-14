@@ -27,7 +27,6 @@ const Settings = ({
   const { logged } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const birthdateString = moment(birthdate).format('DD/MM/YYYY');
-  console.log(birthdateString);
 
   return (
     <div className="account__setting">

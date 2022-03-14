@@ -11,11 +11,8 @@ const usersByGameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_USERS_BY_GAME:
       const currentGameId = parseInt(store.getState().currentGameId, 10);
-
-      console.log(currentGameId);
       next(action);
       const { accessToken } = store.getState();
-  
       axios({
         url: `https://playtogether-back.herokuapp.com/game/${currentGameId}/users`,
         method: 'get',
@@ -26,7 +23,6 @@ const usersByGameMiddleware = (store) => (next) => (action) => {
         .then((res) => {
           const fetchUsersByGameAction = fetchUsersByGameSucces(res.data.datas);
           store.dispatch(fetchUsersByGameAction);
-          // console.log('users by game', res.data);
         })
         .catch((err) => {
           console.log(err);

@@ -47,7 +47,7 @@ const stateInitial = {
   playersVisible: false,
   otherGamesVisible: false,
   user: {
-    email: 'tony@mail.com',
+    email: 'bannanas@mail.com',
     password: '1234',
     password2: '',
     pseudo: '',
@@ -64,7 +64,6 @@ const stateInitial = {
     loadingOGame: false,
   },
   games: {},
-  users: [],
   currentGameId: null,
   currentPlayerId: null,
   gameAlreadyInFavorites: false,

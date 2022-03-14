@@ -7,9 +7,7 @@ const AccountSettingsPage = () => {
   const { settings } = useSelector((state) => state.user);
   return (
     <Settings
-      handleModal={() => {
-        console.log('jai la modal');
-      }}
+      handleModal={() => {}}
       {...settings}
     />
   );

@@ -20,15 +20,12 @@ const userPlayersMiddleware = (store) => (next) => (action) => {
         },
       })
         .then((res) => {
-          console.log(res.data);
           const userPlayersAction = ReceivedUserPlayers(res.data.datas);
           store.dispatch(userPlayersAction);
-          console.log(res.data.datas);
         })
         .catch((err) => {
           console.log(err);
         });
-      
       break;
     default:
       next(action);

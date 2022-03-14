@@ -64,13 +64,13 @@
       
     }
 
-    &--profil::after {
-      content: "\f0d7";
-      position: absolute;
-      font-family: 'fontawesome';
-      top: 21px;
-      left: 150px;
-    }
+    // &--profil::after {
+    //   content: "\f0d7";
+    //   position: absolute;
+    //   font-family: 'fontawesome';
+    //   top: 21px;
+    //   left: 150px;
+    // }
 
     &--profil:hover {
 
@@ -164,13 +164,13 @@
         
       }
 
-      &--profil::after {
-        content: "\f0d7";
-        position: absolute;
-        font-family: 'fontawesome';
-        top: 21px;
-        left: 105px;
-      }
+      // &--profil::after {
+      //   content: "\f0d7";
+      //   position: absolute;
+      //   font-family: 'fontawesome';
+      //   top: 21px;
+      //   left: 105px;
+      // }
   
       &--profil:hover {
   

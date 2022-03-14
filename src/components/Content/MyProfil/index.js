@@ -2,7 +2,7 @@ import './style.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import bckgrdUser from '../../../assets/img/bckgrdUser.jpg';
 import {
-  userProfilInputChange, updateProfilInfoUser, visibleInfo, visibleGame, visiblePlayer,
+  visibleInfo, visibleGame, visiblePlayer,
 } from '../../../actions';
 import InfosHeader from './Infos/InfosHeader';
 import LibHeader from './Library/LibHeader';
@@ -10,19 +10,14 @@ import LibContent from './Library/LibContent';
 import PlayerHeader from './Players/PlayerHeader';
 import PlayerContent from './Players/PlayerContent';
 import InfosContent from './Infos/InfosContent';
-import MyProfilModal from './ProfilModal';
 
 // == Composant
-const MyProfil = ({ handleModal, userInfo }) => {
+const MyProfil = ({ handleModal }) => {
   const { infosVisible, gamesVisible, playersVisible } = useSelector((state) => state);
   const { settings } = useSelector((state) => state.user);
-  const games = useSelector((state) => state.user.favoritesGames);
+  // const games = useSelector((state) => state.user.favoritesGames);
   const InfoPlayers = useSelector((state) => state.user.favoritesPlayers);
-  console.log('jeux favoris reçus', games);
-
   const dispatch = useDispatch();
-
-  
   return (
     <>
       <div className="bgUser">
@@ -62,7 +57,6 @@ const MyProfil = ({ handleModal, userInfo }) => {
           </div>
 
         </div>
-        
         {/* <div className="view__modal view">
           <MyProfilModal
             pseudo={settings.pseudo}

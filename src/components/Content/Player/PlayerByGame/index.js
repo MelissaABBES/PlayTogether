@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 const PlayerByGame = ({
   InfoPlayers,
 }) => {
-  console.log('jysuis');
   const usersByGame = useSelector((state) => state.usersByGame);
   const foundPlayer = usersByGame.find((gPlayer) => gPlayer.id === InfoPlayers);
   return (

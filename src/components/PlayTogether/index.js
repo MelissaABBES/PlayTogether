@@ -19,8 +19,6 @@ const PlayTogether = () => {
   const { settings } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  console.log(settings);
-
   useEffect(() => {
     const action = checkUser();
     dispatch(action);

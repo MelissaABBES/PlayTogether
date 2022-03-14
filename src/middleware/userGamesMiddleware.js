@@ -21,7 +21,6 @@ const userGamesMiddleware = (store) => (next) => (action) => {
       })
         .then((res) => {
           const userGamesAction = ReceivedUserGames(res.data.datas);
-          console.log(userGamesAction);
           store.dispatch(userGamesAction);
         })
         .catch((err) => {

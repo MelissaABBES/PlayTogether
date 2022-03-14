@@ -12,12 +12,13 @@ const MenuLeft = ({ isLogged, settings }) => (
     <div className="menu__tablet__container">
       <NavLink className="menu__tablet__container--home" to="/home">Accueil</NavLink>
       <NavLink className="menu__tablet__container--games" to="/games">Jeux</NavLink>
+      {isLogged && <MenuProfil />}
       <NavLink className="menu__tablet__container--games" to="/team">Team</NavLink>
       
 
     </div>
 
-    {isLogged && <MenuProfil />}
+    
 
   </div>
 );

@@ -1,5 +1,7 @@
 import './style.scss';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import GameTag from './GameTag';
 import level from 'src/assets/img/level.png';
@@ -8,7 +10,9 @@ import platform from 'src/assets/img/platform.png';
 
 // == Composant
 const GameDetailUnlog = () => {
-  
+  const games = useSelector((state) => state.games);
+  const { id } = useParams();
+  const findGame = games.find((game) => id == game.id);
   return (
     <div className="game-detail">
 
@@ -18,24 +22,26 @@ const GameDetailUnlog = () => {
 
           <div className="game-detail__infos__container__head">
 
-            <h1 className="game-detail__infos__container__head--title">Titre du jeu</h1>
-            <button type="button" className="game-detail__infos__container__head--button">Ajouter</button>
+            <h1 className="game-detail__infos__container__head--title">{findGame.name}</h1>
 
           </div>
 
           <div className="game-detail__infos__container__tags">
+            {
+              findGame.tags.forEach((tag) => {
+                <div className="game-tag">
+                  <p className="game-tag--tag">{tag}</p>
+                </div>;
+              })
+            }
 
-            <GameTag />
-            <GameTag />
-            <GameTag />
-               
           </div>
 
         </div>
 
         <div className="game-detail__infos__desc">
 
-          <p className="game-detail__infos__desc--text">Cupidatat nostrud reprehenderit mollit veniam qui id nostrud excepteur eu mollit dolor ullamco amet adipisicing.Cupidatat nostrud reprehenderit mollit veniam qui id nostrud excepteur eu mollit dolor ullamco amet adipisicing.</p>
+          <p className="game-detail__infos__desc--text">{findGame.description}</p>
 
         </div>
 
