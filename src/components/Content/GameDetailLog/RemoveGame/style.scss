@@ -1,0 +1,51 @@
+@use 'src/styles/vars' as v;
+
+.remove-game {
+
+  &--button {
+
+    background-color: #0b336c;
+    border: 6px solid #0c285f;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 0 0 3px #ff9100;
+    box-shadow: 0 0 0 3px #ff9100;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: 700;
+    margin: 10px;
+    padding: 0.5em;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .game-tag {
+
+    &--tag {
+
+      background-color: v.$header-color;
+      padding: 5px 30px 5px 30px;
+      color: v.$text-color;
+      border-radius: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+
+  .game-tag {
+
+    &--tag {
+
+      background-color: v.$header-color;
+      padding: 5px 30px 5px 30px;
+      color: v.$text-color;
+      border-radius: 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}

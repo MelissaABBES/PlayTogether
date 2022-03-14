@@ -1,0 +1,15 @@
+@use 'src/styles/vars' as v;
+.profil-modal {
+  &__form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+    border-radius: 50px;
+    padding: 1em 2em;
+    border:none;
+    
+  }
+}

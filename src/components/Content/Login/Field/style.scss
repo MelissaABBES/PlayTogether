@@ -1,0 +1,32 @@
+.login__input {
+  border-radius: 50px;
+  padding: 1em 2em;
+  border:none;
+  width: 40%;
+  margin-right: -15px;
+}
+
+@media (max-width: 1024px) {
+
+  .login__input {
+    border-radius: 50px;
+    padding: 1em 2em;
+    border:none;
+    width: 40%;
+    margin-right: -15px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .login__input {
+    border-radius: 50px;
+    padding: 1em 2em;
+    border:none;
+    width: 100%;
+    margin-right: -15px;
+  }
+}
+
+
+

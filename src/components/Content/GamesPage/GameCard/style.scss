@@ -1,0 +1,262 @@
+@use 'src/styles/vars' as v;
+
+.game-card {
+
+  width: 28%;
+  height: 240px;
+  min-height: 240px;
+  max-height: 240px;
+  background-color: #f4fefe;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 100px 20px;
+  border-radius: 10px;
+
+  &__left {
+
+    width: 50%;
+    position: relative;
+
+    &--img {
+
+      max-width: 100%;
+      position: absolute;
+      top: -103px;
+      left: 19px;
+      box-shadow: black 0px 20px 50px -10px;
+      transition: 0.2s ease-in-out;
+    }
+
+    &--img:hover {
+
+      transform: scale(1.1);
+      box-shadow: black 0px 20px 70px -10px;
+      transition: 0.5s;
+    }
+
+  }
+
+  &__infos {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+
+    &--title {
+
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    &--tags {
+
+      width: 70%;
+      margin-bottom: 10px;
+
+    }
+
+    &--platform {
+
+      width: 100%;
+      font-size: 0.8em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &__players {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 15px;
+
+      &--icon {
+
+        width: 20%;
+      }
+    }
+
+    &--rating {
+
+      width: 50%;
+    }
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .game-card {
+
+    width: 40%;
+    height: 30%;
+    background-color: #f4fefe;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    border-radius: 10px;
+
+    &__left {
+
+      width: 50%;
+      position: relative;
+
+      &--img {
+
+        max-width: 100%;
+        left: 18px;
+        position: absolute;
+        top: -101px;
+      }
+
+    }
+
+    &__infos {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+
+      &--title {
+
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      &--tags {
+
+        width: 70%;
+        margin-bottom: 10px;
+
+      }
+
+      &--platform {
+
+        width: 100%;
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      &__players {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+
+        &--icon {
+
+          width: 20%;
+        }
+      }
+
+      &--rating {
+
+        width: 50%;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 375px) {
+
+  a {
+
+    width: 100%;
+  }
+
+  .game-card {
+
+    width: 90%;
+    height: 60%;
+    background-color: #f4fefe;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 20px 20px;
+    border-radius: 10px;
+
+    &__left {
+
+      width: 50%;
+
+      &--img {
+
+        max-width: 100%;
+      }
+
+    }
+
+    &__infos {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+
+      &--title {
+
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      &--tags {
+
+        width: 70%;
+        margin-bottom: 10px;
+
+      }
+
+      &--platform {
+
+        width: 100%;
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      &__players {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+
+        &--icon {
+
+          width: 20%;
+        }
+      }
+
+      &--rating {
+
+        width: 50%;
+      }
+    }
+
+  }
+}

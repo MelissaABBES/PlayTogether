@@ -1,0 +1,45 @@
+@use 'src/styles/vars' as v;
+
+.menu__avatar {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--img {
+    width: 50%;
+    margin-top: 40px;
+    clip-path: ellipse(50% 50%);
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .menu__avatar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--img {
+      width: 50%;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+
+  .menu__avatar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--img {
+      width: 50%;
+      margin-top: 40px;
+    }
+  }
+}
+

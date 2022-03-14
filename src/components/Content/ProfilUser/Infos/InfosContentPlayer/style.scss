@@ -1,0 +1,42 @@
+.gamerTag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    width: 100%;
+    & img {
+      max-width: 60%;
+    }
+  }
+}
+
+.profil__content {
+  position: relative;
+}
+
+.hide-contenu {
+  display: none;
+  transition: 0.5s ease-in-out;
+}
+
+.contenu > .active-contenu {
+  display: flex;
+  flex-direction: column !important;
+  transition: 0.5s ease-in-out;
+}
+
+.active-contenu {
+  display: flex;
+  transition: 0.5s ease-in-out;
+}
+
+//  #INFOS::after {
+//   content:"";
+//   position: absolute;
+//   clip-path: polygon(100% 0,100% 100%,0 100%,0 49%,41% 0);
+//   border:5px solid black;
+//   top:0;
+//   left:0;
+//   width: 100%;
+// }

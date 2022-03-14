@@ -1,0 +1,202 @@
+@use 'src/styles/vars' as v;
+
+.menu__tablet {
+  width: 15%;
+  height: 100%;
+  position:fixed;
+  top: 110px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background:v.$primary-color;
+  &__avatar {
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    
+    &--home {
+
+      font-size: 1.4em;
+      margin-bottom: 1.2em;
+      margin: 20px 0 0 10px;
+      margin-left:10px;
+      border-bottom: 1px solid #0B336C;
+      width: 80%;
+      padding: 20px 20px 20px 15px;
+      text-align: left;
+    }
+
+    &--home:hover {
+
+      color: v.$secondary-color;
+    }
+
+    &--games {
+
+      font-size: 1.4em;
+      margin-left:10px;
+      border-bottom: 1px solid #0B336C;
+      width: 80%;
+      padding: 20px 20px 20px 15px;
+      text-align: left;
+    }
+
+    &--games:hover {
+
+      color: v.$secondary-color;
+    }
+
+    &--profil {
+
+      font-size: 1.4em;
+      margin: 0 0 10px 10px;
+      border-bottom: 1px solid #0B336C;
+      width: 80%;
+      padding: 20px 20px 20px 15px;
+      text-align: left;
+      
+    }
+
+    &--profil:hover {
+
+      color: v.$secondary-color;
+    }
+  }  
+
+  &__container i {
+     
+    position: absolute;
+    top: 170px;
+    left: 95px;
+  }
+
+  &__subMenu {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    margin-left: 30px;
+  }
+
+  &__subMenu a {
+
+    margin: 15px 0 20px 10px;
+  }
+
+  &__subMenu a:hover {
+
+    color: v.$secondary-color;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .menu__tablet {
+    width: 15%;
+    height: 100%;
+    position:fixed;
+    top: 110px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background:v.$primary-color;
+  
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      position: relative;
+      
+      &--home {
+  
+        font-size: 1.4em;
+        margin-bottom: 1.2em;
+        margin: 20px 0 0 10px;
+        margin-left:10px;
+        border-bottom: 1px solid #0B336C;
+        width: 80%;
+        padding: 20px 20px 20px 15px;
+        text-align: left;
+      }
+  
+      &--home:hover {
+  
+        color: v.$secondary-color;
+      }
+  
+      &--games {
+  
+        font-size: 1.4em;
+        margin-left:10px;
+        border-bottom: 1px solid #0B336C;
+        width: 80%;
+        padding: 20px 20px 20px 15px;
+        text-align: left;
+      }
+  
+      &--games:hover {
+  
+        color: v.$secondary-color;
+      }
+  
+      &--profil {
+  
+        font-size: 1.4em;
+        margin: 0 0 10px 10px;
+        border-bottom: 1px solid #0B336C;
+        width: 80%;
+        padding: 20px 20px 20px 15px;
+        text-align: left;
+        
+      }
+  
+      &--profil:hover {
+  
+        color: v.$secondary-color;
+      }
+    }  
+  
+    &__container i {
+       
+      position: absolute;
+      top: 170px;
+      left: 95px;
+    }
+  
+    &__subMenu {
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      margin-left: 30px;
+    }
+  
+    &__subMenu a {
+  
+      margin: 15px 0 20px 0;
+    }
+  
+    &__subMenu a:hover {
+  
+      color: v.$secondary-color;
+    }
+  }
+}
+

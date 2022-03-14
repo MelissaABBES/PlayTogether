@@ -1,0 +1,52 @@
+@use 'src/styles/vars' as v;
+
+.radial-menu {
+
+  width: 100px;
+  height: 140px;
+  background-color: #0b336c;
+  border-radius: 5px;
+  position: absolute;
+  top: -175%;
+  left: 39%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  animation: pop-up 0.3s ease;
+  
+  & --infos, & --myGames, & --users, & --logout {
+
+    color: v.$text-color;
+    font-size: 1.2em;
+  }
+
+  & --infos, & --myGames, & --users, & --logout:active {
+
+    color: v.$secondary-color;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 129px;
+    left: 17px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 0;
+    border-color: #0b336c transparent transparent transparent;
+  }
+
+}
+
+@keyframes pop-up {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

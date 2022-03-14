@@ -1,0 +1,307 @@
+@use 'src/styles/vars' as v;
+
+.view__modal {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+
+.hideView {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+
+// .profil-modal {
+
+//   visibility: visible;
+//   z-index: 999;
+//   position: fixed;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 30%;
+//   height: 100%;
+//   background-color: v.$header-color;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+//   border-radius: 10px;
+//   -webkit-box-shadow: inset 13px 13px 18px -16px #000000; 
+// 	box-shadow: 13px 13px 18px -16px #000000;
+//   padding: 20px 0 20px 0;
+  
+//   &__title {
+
+//     font-size: 1.8em;
+//     color: v.$secondary-color;
+//     font-weight: bold;
+//   }
+
+//   &__description {
+
+//     font-size: 1.2em;
+//     width: 50%;
+//   }
+
+//   &__form {
+
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     height: 80%;
+
+//     &__avatar label {
+
+//       position: absolute;
+//       left: 325px;
+//       top: 235px;
+//     }
+
+//     &__avatar--img {
+
+//       width: 40%;
+//       position: relative;
+//       border: 2px solid v.$secondary-color;
+//       border-radius: 50%;
+//     }
+
+//     &__avatar--file {
+
+//       position: absolute;
+//       top: 229px;
+//       left: 135px;
+//       display: none;
+//     }
+
+//     & input {
+
+//       border-radius: 50px;
+//       padding: 1em 2em;
+//       border:none;
+//     }
+
+//     &--submit {
+
+//       // width: 100%;
+//       padding: 0.5em;
+//       margin: 10px;
+//       border-radius: 50px;
+//       border: 6px solid #0C285F;
+//       box-shadow: 0 0 0 3px v.$secondary-color;
+//       background-color: #0B336C;
+//       color: v.$text-color;
+//       font-family: 'Roboto';
+//       text-transform: uppercase;
+//       font-weight: 700;
+//     }
+    
+//   }
+//   & .close {
+//     position: relative;
+//     width: 100%;
+//     display: flex;
+//     & .closeSettings {
+//       background: transparent!important;
+//       border: none!important;
+//       position: absolute;
+//       right: 10px;
+//       top: 0;
+//       width: 100%;
+//       display: flex;
+//       justify-content: flex-end;
+//       & i {
+//         color:white;
+//         font-size:1rem;
+//       }
+//   }
+//   }
+// }
+
+// @media (max-width: 1024px) {
+
+//   .profil-modal {
+
+//     visibility: visible;
+//     z-index: 999;
+//     position: fixed;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 50%;
+//     height: 70%;
+//     background-color: v.$header-color;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     border-radius: 10px;
+//     -webkit-box-shadow: inset 13px 13px 18px -16px #000000; 
+//     box-shadow: 13px 13px 18px -16px #000000;
+//     padding: 20px 0 20px 0;
+    
+//     &__title {
+  
+//       font-size: 1.8em;
+//       color: v.$secondary-color;
+//       font-weight: bold;
+//     }
+  
+//     &__description {
+  
+//       font-size: 1.2em;
+//       width: 50%;
+//     }
+  
+//     &__form {
+  
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-around;
+//       align-items: center;
+//       height: 80%;
+  
+//       &__avatar label {
+  
+//         position: absolute;
+//         left: 325px;
+//         top: 235px;
+//       }
+  
+//       &__avatar--img {
+  
+//         width: 40%;
+//         position: relative;
+//         border: 2px solid v.$secondary-color;
+//         border-radius: 50%;
+//       }
+  
+//       &__avatar--file {
+  
+//         position: absolute;
+//         top: 229px;
+//         left: 135px;
+//         display: none;
+//       }
+  
+//       & input {
+  
+//         border-radius: 50px;
+//         padding: 1em 2em;
+//         border:none;
+//       }
+  
+//       &--submit {
+  
+//         // width: 100%;
+//         padding: 0.5em;
+//         margin: 10px;
+//         border-radius: 50px;
+//         border: 6px solid #0C285F;
+//         box-shadow: 0 0 0 3px v.$secondary-color;
+//         background-color: #0B336C;
+//         color: v.$text-color;
+//         font-family: 'Roboto';
+//         text-transform: uppercase;
+//         font-weight: 700;
+//       }
+//     }
+//   }
+// }
+
+#root > div > div > div.main-content > div.profil > div.container-onglets > div.profil__content > div.view.profil > div > div > form > input:nth-child(4) {
+  width: 90%;
+}
+
+@media (max-width: 375px) {
+
+  .profil-modal {
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background-color: v.$header-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 13px 13px 18px -16px #000000; 
+    box-shadow: 13px 13px 18px -16px #000000;
+    padding: 0;
+    
+    &__title {
+  
+      font-size: 1.8em;
+      color: v.$secondary-color;
+      font-weight: bold;
+    }
+  
+    &__description {
+  
+      font-size: 0.8em;
+      width: 50%;
+    }
+  
+    &__form {
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height:auto;
+  
+      &__avatar label {
+  
+        // position: absolute;
+        left: 202px;
+        top: 225px;
+      }
+  
+      &__avatar--img {
+  
+        width: 40%;
+        position: relative;
+        border: 2px solid v.$secondary-color;
+        border-radius: 50%;
+      }
+  
+      &__avatar--file {
+  
+        // position: absolute;
+        top: 229px;
+        left: 135px;
+        display: none;
+      }
+  
+      & input {
+  
+        border-radius: 50px;
+        padding: 1em 2em;
+        border:none;
+      }
+  
+      &--submit {
+  
+        // width: 100%;
+        padding: 0.5em;
+        margin: 10px;
+        border-radius: 50px;
+        border: 6px solid #0C285F;
+        box-shadow: 0 0 0 3px v.$secondary-color;
+        background-color: #0B336C;
+        color: v.$text-color;
+        font-family: 'Roboto';
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+

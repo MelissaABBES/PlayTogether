@@ -1,0 +1,66 @@
+@use 'src/styles/vars' as v;
+
+.forgot__password {
+  padding:20px;
+  & h1 {
+    text-align: center;
+    margin: 35px 0 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color:#fff;
+  }
+  & h2 {
+    font-size:1.5rem;
+    margin-bottom:40px;
+  }
+  & form {
+    display: flex;
+    flex-direction: revert;
+    flex-wrap: wrap;
+    margin-top:30px;
+    & input {
+      border-radius: 50px;
+      padding: 1em 2em;
+      border:none;
+      width: 60%;
+      margin-right:30px;
+    }
+    & button {
+      border-radius: 50px;
+      padding: .4em;
+      border: 6px solid #0C285F;
+      box-shadow: 0 0 0 3px v.$secondary-color;
+      background-color: #0B336C;
+      color: v.$text-color;
+      font-family: 'Roboto';
+      text-transform: uppercase;
+      font-weight: 700;
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .forgot__password {
+    & h1 {
+      font-size: 1.5rem;
+      margin: 30px 55px;
+    }
+    & h2 {
+      font-size: 1.2rem;
+    }
+    & form {
+      justify-content: center;
+      & input {
+        width: 100%;
+        margin-right:0px;
+        margin-bottom:30px;
+      }
+      & button {
+        width: 98%;
+        margin-bottom:30px;
+      }
+    }
+  }
+  
+}

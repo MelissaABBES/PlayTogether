@@ -1,0 +1,172 @@
+.unlog{
+  display: flex;
+  flex-direction:column;
+}
+
+.Genre{
+  margin-bottom: 10%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.Plateforme{
+  margin-bottom: 10%;
+  justify-content: space-between;
+  display: flex;
+  
+}
+
+.Notes{
+  margin-bottom: 10%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.Nombre{
+  margin-bottom: 10%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.footer__game{
+  width: 4rem;
+  
+}
+
+.footer__house{
+  width: 4rem;
+  margin-left: 30%;
+}
+
+// .content__btn{
+//   margin-bottom: 15%;
+// }
+
+ //.content__btn__register{
+  //background-color: #0b336c;
+  //border: 6px solid #0c285f;
+  //border-radius: 50px;
+  //-webkit-box-shadow: 0 0 0 3px #ff9100;
+  //box-shadow: 0 0 0 3px #ff9100;
+  //color: #fff;
+ // font-family: Roboto;
+  //font-weight: 700;
+  //padding: 1.2em;
+ // text-transform: uppercase;
+ // width: 25%;
+ //}
+
+// .content__btn__login{
+//   background-color: blueviolet;
+//   padding:2%;
+//   width: 35%;
+// }
+
+.select__unlog{
+  margin-left: 15%;
+  align-self: center;
+  display: flex;
+
+  
+}
+
+.Search{
+  margin-bottom: 15%;
+  margin-top: 12%;
+  position: relative;
+  margin-right: 60%;
+  padding: 2%;
+
+}
+
+.filter{
+  margin-right: 0%;
+  padding: 2%;
+  width: 25%;
+}
+
+.effacer{
+  padding:2%;
+  width: 45%;
+  margin-left: 30%;
+}
+
+.button{
+  margin-bottom: 15%;
+}
+
+.angle{
+  width: 10%;
+  position:relative;
+  margin-bottom: 15%;
+}
+
+.chercher{
+  margin-left: -16%;
+    margin-top: 4%;
+    position: absolute;
+    width: 1%;
+}
+
+@media (max-width: 1024px) {
+  .content__btn__register {
+  
+    margin-right: 15%;
+    padding: 2%;
+    width: 35%;
+}
+.content__btn__login {
+  padding: 0.8em;
+    width: 35%;
+}
+
+.chercher {
+  margin-left: -29%;
+  margin-top: 7%;
+  position: absolute;
+  width: 2%;
+}
+
+}
+
+
+@media (max-width: 375px) {
+  .unlog{
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 10%;
+    
+  }
+  .Search{
+    position: relative;
+    padding: 1%;
+    width: 35%;
+    margin-left: 0%;
+    
+  
+  }
+
+  .chercher{
+    width: 4%;
+    position: absolute;
+    margin-left: -57%;
+    margin-top: 14%;
+    color: white;
+  }
+
+  .Nombre{
+    margin-left: -6%;
+  }
+  .content__btn__register{
+    width: 70%;
+    padding: 3%;
+    margin-left:20%
+  }
+
+  .content__btn__login{
+    margin-left: 12%;
+    width: 70%;
+  }
+}
+
+

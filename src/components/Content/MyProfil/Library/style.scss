@@ -1,0 +1,30 @@
+.games {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding:0 30px;
+  width: 100%;
+  & .game-card {
+    width: 100%;
+  }
+  & a {
+    width: 28%;
+  }
+}
+
+@media (max-width: 375px) {
+  .games {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding:0 30px;
+    width: 100%;
+    & .game-card {
+      width: 100%;
+    }
+  }
+}

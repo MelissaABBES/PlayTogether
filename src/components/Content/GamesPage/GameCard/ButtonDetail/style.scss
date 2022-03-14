@@ -1,0 +1,39 @@
+@use 'src/styles/vars' as v;
+
+.button-detail {
+
+  &--button {
+
+    margin-bottom: 16px;
+    border-radius: 50px;
+    border: 6px solid #0C285F;
+    box-shadow: 0 0 0 3px v.$secondary-color;
+    background-color: #0B336C;
+    color: v.$text-color;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
+  
+}
+
+@media (max-width: 1024px) {
+
+  .button-detail {
+
+    &--button {
+  
+      margin-bottom: 16px;
+      border-radius: 50px;
+      border: 6px solid #0C285F;
+      box-shadow: 0 0 0 3px v.$secondary-color;
+      background-color: #0B336C;
+      color: v.$text-color;
+      font-family: 'Roboto';
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    
+  }
+}

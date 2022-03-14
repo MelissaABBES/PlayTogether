@@ -1,0 +1,141 @@
+.form__inscription{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+ 
+}
+.intro{
+  margin-top: 60px;
+  margin-bottom: 60px
+}
+
+.inscription h1 {
+  margin-top:30px;
+  color: #ff9100;
+  font-size: 2.4em;
+}
+
+.Create{
+  margin-bottom: 8%;
+  margin-top: 15%;
+  position: relative;
+  left:2%;
+  font-weight: bold;
+
+
+  }
+.Create__user{
+  width: 3rem;
+  position: absolute;
+  margin-left: 22%;
+  margin-top: -2%;
+  
+
+}
+
+.form__email{
+  margin-bottom: 5%;
+  padding: 3%;
+  border-radius: 50px;
+}
+
+.inscrire{
+  background-color:#0b336c;
+  box-shadow: 0 0 0 3px #ff9100;
+  margin-top: 5%;
+  padding: 3%;
+  margin-bottom:15% ;
+  border-radius: 50px;
+  border: 6px solid #0c285f;
+  color: #fff;
+  font-family: Roboto;
+  font-weight: 700;
+}
+.form__password{
+  margin-bottom: 5%;
+  padding: 3%;
+  border-radius: 50px;
+}
+
+.form__pseudo{
+margin-bottom: 5%;
+padding: 3%;
+border-radius: 50px;
+}
+
+.form__naissance{
+  padding:3%;
+  border-radius: 50px;
+}
+
+.footer{
+  justify-content: space-between;
+}
+.footer__game{
+  width: 4rem;
+  
+}
+
+.footer__house{
+  width: 4rem;
+  margin-left: 60%;
+}
+
+.inscription button {
+
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .inscription{
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+  }
+
+  .Create__user{
+    position: absolute;
+    margin-left:18%;
+    margin-top: -3%;
+  
+  }
+
+  .intro{
+    margin-top: 60px;
+    // margin-bottom: -35px;
+  }
+
+  .inscription button {
+
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .inscription{
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 2%;
+    
+  }
+
+  .Create__user{
+    position: absolute;
+    margin-left:15%;
+    margin-top: -5%;
+  
+  }
+
+  .inscription button {
+
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

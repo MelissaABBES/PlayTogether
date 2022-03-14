@@ -1,0 +1,36 @@
+@use 'src/styles/vars' as v;
+
+.welcome {
+
+  margin-left: 55%;
+
+  &--sentence {
+
+    font-size: 1.2em; 
+  }
+
+  &--sentence span {
+
+    font-size: 1.2em; 
+    color: v.$secondary-color;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .welcome {
+
+    margin-left: 35%;
+  
+    &--sentence {
+  
+      font-size: 1.2em; 
+    }
+  
+    &--sentence span {
+  
+      font-size: 1.2em; 
+      color: v.$secondary-color;
+    }
+  }
+}

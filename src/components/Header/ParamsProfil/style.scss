@@ -1,0 +1,10 @@
+@use 'src/styles/vars' as v;
+
+.params-profil {
+
+  &--icon {
+    margin-right: 2px;
+    position: relative;
+    width: 38%;
+  }
+}

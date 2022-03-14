@@ -1,0 +1,335 @@
+@use 'src/styles/vars' as v;
+
+.game-detail {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__infos {
+
+    margin-top: 10px;
+  }
+
+  &__infos__container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__head {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 90%;
+      
+
+      &--title {
+
+        font-size: 2.4em;
+        color: v.$secondary-color;
+      }
+
+      &--button {
+
+        padding: 0.5em;
+        margin: 10px;
+        border-radius: 50px;
+        border: 6px solid #0C285F;
+        box-shadow: 0 0 0 3px v.$secondary-color;
+        background-color: #0B336C;
+        color: v.$text-color;
+        font-family: 'Roboto';
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+
+    &__tags {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 80%;
+    }
+  }
+
+  &__infos__desc {
+
+    &--text {
+
+      font-size: 1.1em;
+      text-align: center;
+      margin: 20px 15px;
+    }
+  }
+  
+  &__unlog {
+
+    background-color:#0B336C;
+    width: 60%;
+    padding: 70px;
+    margin-top: 100px;
+
+    &--text {
+
+      font-size: 1em;
+      margin-bottom: 19px;
+    }
+
+    &__btns {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+
+      &--register, &--login {
+
+        padding: 0.5em;
+        margin: 10px;
+        border-radius: 50px;
+        border: 6px solid #0C285F;
+        box-shadow: 0 0 0 3px v.$secondary-color;
+        background-color: #0B336C;
+        color: v.$text-color;
+        font-size: 0.8em;
+        font-family: 'Roboto';
+        text-transform: uppercase;
+        font-weight: 700; 
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .game-detail {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    &__infos {
+  
+      margin-top: 10px;
+    }
+  
+    &__infos__container {
+  
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+  
+      &__head {
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+        
+  
+        &--title {
+  
+          font-size: 2.4em;
+          color: v.$secondary-color;
+        }
+  
+        &--button {
+  
+          padding: 0.5em;
+          margin: 10px;
+          border-radius: 50px;
+          border: 6px solid #0C285F;
+          box-shadow: 0 0 0 3px v.$secondary-color;
+          background-color: #0B336C;
+          color: v.$text-color;
+          font-family: 'Roboto';
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+  
+      &__tags {
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
+      }
+    }
+  
+    &__infos__desc {
+  
+      &--text {
+  
+        font-size: 1.1em;
+        text-align: center;
+        margin: 20px 15px;
+      }
+    }
+    
+    &__unlog {
+
+      background-color:#0B336C;
+      width: 60%;
+      padding: 40px;
+      margin-top: 46px;
+
+      &--text {
+
+        font-size: 1em;
+        margin-bottom: 19px;
+      }
+
+      &__btns {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+        &--register, &--login {
+
+          padding: 0.5em;
+          margin: 10px;
+          border-radius: 50px;
+          border: 6px solid #0C285F;
+          box-shadow: 0 0 0 3px v.$secondary-color;
+          background-color: #0B336C;
+          color: v.$text-color;
+          font-size: 0.8em;
+          font-family: 'Roboto';
+          text-transform: uppercase;
+          font-weight: 700; 
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 375px) {
+
+  .game-detail {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+    &__infos {
+  
+      margin-top: 10px;
+    }
+  
+    &__infos__container {
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+  
+      &__head {
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+        
+  
+        &--title {
+  
+          font-size: 2.4em;
+          color: v.$secondary-color;
+        }
+  
+        &--button {
+  
+          padding: 0.5em;
+          margin: 10px;
+          border-radius: 50px;
+          border: 6px solid #0C285F;
+          box-shadow: 0 0 0 3px v.$secondary-color;
+          background-color: #0B336C;
+          color: v.$text-color;
+          font-family: 'Roboto';
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+  
+      &__tags {
+  
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
+      }
+    }
+  
+    &__infos__desc {
+  
+      
+  
+      &--text {
+  
+        font-size: 1.1em;
+        text-align: center;
+        margin: 20px 15px;
+      }
+    }
+    
+    &__unlog {
+
+      background-color:#0B336C;
+      width: 80%;
+      padding: 30px;
+      margin-bottom: 32px;
+      margin-top: 0;
+
+      &--text {
+
+        font-size: 1em;
+        margin-bottom: 19px;
+      }
+
+      &__btns {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+        &--register, &--login {
+
+          padding: 0.5em;
+          margin: 10px;
+          border-radius: 50px;
+          border: 6px solid #0C285F;
+          box-shadow: 0 0 0 3px v.$secondary-color;
+          background-color: #0B336C;
+          color: v.$text-color;
+          font-size: 0.8em;
+          font-family: 'Roboto';
+          text-transform: uppercase;
+          font-weight: 700; 
+        }
+      }
+    }
+  }
+}
